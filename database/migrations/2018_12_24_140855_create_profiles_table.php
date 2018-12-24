@@ -15,6 +15,9 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nickname', 255);
+            $table->integer('wins')->default(0);
+            $table->integer('losses')->default(0);
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlayedGameUserScoresTable extends Migration
+class CreatePlayedGamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreatePlayedGameUserScoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('played_game_user_scores', function (Blueprint $table) {
+        Schema::create('played_games', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamp('playedAt')->default(now());
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreatePlayedGameUserScoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('played_game_user_scores');
+        Schema::dropIfExists('played_games');
     }
 }

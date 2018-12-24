@@ -7,14 +7,25 @@ use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
+
+    public function __construct ()
+    {
+
+        // for dev, TODO remove this
+//        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index ()
     {
-        //
+
+        $games = Games::all();
+
+        return view('games.index', compact('games'));
     }
 
     /**
@@ -22,29 +33,36 @@ class GamesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create ()
     {
-        //
+
+        return view('games.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store (Request $request)
     {
-        //
+
+        request()->validate(Games::$validations);
+        Games::create(request()->all());
+
+        return redirect('/games');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Games  $games
+     * @param  \App\Games $games
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show(Games $games)
+    public function show (Games $games)
     {
         //
     }
@@ -52,34 +70,46 @@ class GamesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Games  $games
+     * @param  \App\Games $games
+     *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Games $games)
+    public function edit (Games $games)
     {
-        //
+
+        $game = $games->toArray();
+
+        return view('games.update', compact('game'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Games  $games
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Games               $games
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Games $games)
+    public function update (Request $request, Games $games)
     {
-        //
+
+        request()->validate(Games::$validations);
+        $games->update(request()->all());
+
+        return redirect('/games');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Games  $games
+     * @param  \App\Games $games
+     *
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy(Games $games)
+    public function destroy (Games $games)
     {
-        //
+        $games->delete();
+        return redirect('/games');
     }
 }

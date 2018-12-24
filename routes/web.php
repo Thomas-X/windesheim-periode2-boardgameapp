@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/games', 'GamesController@index');
+Route::get('/games/create', 'GamesController@create');
+Route::post('/games/create', 'GamesController@store');
+Route::get('/games/{games}/edit', 'GamesController@edit');
+Route::patch('/games/{games}/update', 'GamesController@update');
+Route::delete('/games/{games}/destroy', 'GamesController@destroy');
+
+
+Route::get('/scores', 'ScoresController@index');

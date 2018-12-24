@@ -21,10 +21,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name' ) }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -38,6 +38,14 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/scores">Spel spelen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/games">Games beheren</a>
+                        </li>
+
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -72,7 +80,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container" style="padding: 0 !important;">
             @yield('content')
         </main>
     </div>
