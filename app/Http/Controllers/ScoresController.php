@@ -49,25 +49,25 @@ class ScoresController extends Controller
     public function store (Request $request)
     {
 
-//        request()->validate([
-//                                'game'    => 'required|string',
-//                                'players' => function ($attribute, $value, $fail) {
-//                                    $a = collect($value);
-//                                    $b = collect(
-//                                        collect($value)
-//                                            ->filter(function ($value, $key) {
-//
-//                                                return $value !== null;
-//                                            }
-//                                            )->toArray()
-//                                    )->unique();
-//                                    if ($a->count() !== $b->count()) {
-//                                        $fail($attribute . ' is duplicate');
-//                                    }
-//                                },
-//                                'scores'  => 'required',
-//                            ]
-//        );
+        request()->validate([
+                                'game'    => 'required|string',
+                                'players' => function ($attribute, $value, $fail) {
+                                    $a = collect($value);
+                                    $b = collect(
+                                        collect($value)
+                                            ->filter(function ($value, $key) {
+
+                                                return $value !== null;
+                                            }
+                                            )->toArray()
+                                    )->unique();
+                                    if ($a->count() !== $b->count()) {
+                                        $fail($attribute . ' is duplicate');
+                                    }
+                                },
+                                'scores'  => 'required',
+                            ]
+        );
         // Collect values into Eloquent collections
         $players = collect(request()->all()['players']);
         $scores = collect(request()->all()['scores']);
@@ -104,7 +104,7 @@ class ScoresController extends Controller
 
         }
 
-        return redirect('/scores');
+        return redirect(route('scoresIndex'));
     }
 
     /**

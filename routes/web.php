@@ -11,27 +11,29 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/~s1130146/P2_Laravel_Opdracht', function () {
+
     return view('welcome');
-});
+}
+)->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/~s1130146/P2_Laravel_Opdracht/home', 'HomeController@index')->name('homeLoggedIn');
 
-Route::get('/games', 'GamesController@index');
-Route::get('/games/create', 'GamesController@create');
-Route::post('/games/create', 'GamesController@store');
-Route::get('/games/{games}/edit', 'GamesController@edit');
-Route::patch('/games/{games}/update', 'GamesController@update');
-Route::delete('/games/{games}/destroy', 'GamesController@destroy');
+Route::get('/~s1130146/P2_Laravel_Opdracht/games', 'GamesController@index')->name('gamesIndex');
+Route::get('/~s1130146/P2_Laravel_Opdracht/games/create', 'GamesController@create')->name('gamesCreate');
+Route::post('/~s1130146/P2_Laravel_Opdracht/games/create', 'GamesController@store')->name('gamesStore');
+Route::get('/~s1130146/P2_Laravel_Opdracht/games/{games}/edit', 'GamesController@edit')->name('gamesEdit');
+Route::patch('/~s1130146/P2_Laravel_Opdracht/games/{games}/update', 'GamesController@update')->name('gamesUpdate');
+Route::delete('/~s1130146/P2_Laravel_Opdracht/games/{games}/destroy', 'GamesController@destroy')->name('gamesDestroy');
 
 
-Route::get('/scores', 'ScoresController@index');
-Route::get('/scores/create', 'ScoresController@create');
-Route::post('/scores/create', 'ScoresController@store');
+Route::get('/~s1130146/P2_Laravel_Opdracht/scores', 'ScoresController@index')->name('scoresIndex');
+Route::get('/~s1130146/P2_Laravel_Opdracht/scores/create', 'ScoresController@create')->name('scoresCreate');
+Route::post('/~s1130146/P2_Laravel_Opdracht/scores/create', 'ScoresController@store')->name('scoresStore');
 
-Route::get('/temp_user', 'TempUser@index');
-Route::post('/temp_user/create', 'TempUser@create');
+Route::get('/~s1130146/P2_Laravel_Opdracht/temp_user', 'TempUser@index')->name('tempUserIndex');
+Route::post('/~s1130146/P2_Laravel_Opdracht/temp_user/create', 'TempUser@create')->name('tempUserCreate');
 
-Route::get('/scores/overview', 'ScoresOverview@index');
+Route::get('/~s1130146/P2_Laravel_Opdracht/scores/overview', 'ScoresOverview@index')->name('scoresOverviewIndex');

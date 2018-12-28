@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/~s1130146/P2_Laravel_Opdracht/';
 
     /**
      * Create a new controller instance.

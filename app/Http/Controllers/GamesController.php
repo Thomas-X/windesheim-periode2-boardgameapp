@@ -11,7 +11,6 @@ class GamesController extends Controller
     public function __construct ()
     {
 
-        // for dev, TODO remove this
 //        $this->middleware('auth');
     }
 
@@ -52,7 +51,7 @@ class GamesController extends Controller
         request()->validate(Games::$validations);
         Games::create(request()->all());
 
-        return redirect('/games');
+        return redirect(route('gamesIndex'));
     }
 
     /**
@@ -96,7 +95,8 @@ class GamesController extends Controller
         request()->validate(Games::$validations);
         $games->update(request()->all());
 
-        return redirect('/games');
+        return redirect(route('gamesIndex'));
+
     }
 
     /**
@@ -110,6 +110,7 @@ class GamesController extends Controller
     public function destroy (Games $games)
     {
         $games->delete();
-        return redirect('/games');
+        return redirect(route('gamesIndex'));
+
     }
 }

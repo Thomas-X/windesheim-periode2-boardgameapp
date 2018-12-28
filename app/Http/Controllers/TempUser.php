@@ -32,7 +32,7 @@ class TempUser extends Controller
                          ]
         );
 
-        return redirect('/');
+        return redirect(route('home'));
     }
 
     /**
