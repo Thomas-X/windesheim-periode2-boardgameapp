@@ -16,7 +16,7 @@
                 </ul>
             </div>
         @endif
-        <form action="/scores/create" method="post" class="d-flex flex-column">
+        <form action="/~s1130146/P2_Laravel_Opdracht/scores/create" method="post" class="d-flex flex-column">
             @csrf
             <label>
                 Spel

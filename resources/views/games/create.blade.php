@@ -16,7 +16,7 @@
                 </ul>
             </div>
         @endif
-        <form action="/games/create" method="post" class="d-flex flex-column">
+        <form action="{{ route('gamesCreate') }}" method="post" class="d-flex flex-column">
             @csrf
             <label>
                 Naam

@@ -7,7 +7,7 @@
         <p>
             Je kan alle scores hier beheren
         </p>
-        <button class="btn btn-success" onclick="window.location.href = '/scores/create';">
+        <button class="btn btn-success" onclick="window.location.href = '{{ route('scoresCreate')  }}';">
             Gespeeld spel registreren
         </button>
     </div>

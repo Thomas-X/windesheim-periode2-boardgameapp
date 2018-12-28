@@ -11,13 +11,23 @@
 |
 */
 
-Route::get('/~s1130146/P2_Laravel_Opdracht', function () {
+
+Route::get('/~s1130146/P2_Laravel_Opdracht/', function () {
 
     return view('welcome');
 }
 )->name('home');
 
-Auth::routes();
+// Redirect dead routes to new home
+if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '') {
+    $uri = '/~s1130146/P2_Laravel_Opdracht';
+    header("Location: {$uri}");
+    die;
+}
+
+Route::prefix('/~s1130146/P2_Laravel_Opdracht')->group(function () {
+    Auth::routes();
+});
 
 Route::get('/~s1130146/P2_Laravel_Opdracht/home', 'HomeController@index')->name('homeLoggedIn');
 

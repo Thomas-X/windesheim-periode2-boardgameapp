@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     {{ config('app.name' ) }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -39,16 +39,16 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/scores">Spel spelen</a>
+                            <a class="nav-link" href="{{ route('scoresIndex') }}">Spel spelen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/games">Games beheren</a>
+                            <a class="nav-link" href="{{ route('gamesIndex')  }}">Games beheren</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/temp_user">Tijdelijke gebruikers</a>
+                            <a class="nav-link" href="{{ route('tempUserIndex') }}">Tijdelijke gebruikers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/scores/overview">Scores overzicht</a>
+                            <a class="nav-link" href="{{ route('scoresOverviewIndex') }}">Scores overzicht</a>
                         </li>
 
 

@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <h1>Voeg een tijdelijke gebruiker toe..</h1>
         </div>
-        <form method="post" action="/temp_user/create" class="d-flex flex-column">
+        <form method="post" action="{{ route('tempUserCreate') }}" class="d-flex flex-column">
             @csrf
             <label>
                 Nickname
