@@ -16,7 +16,7 @@
                 </ul>
             </div>
         @endif
-        <form action="/scores/create" method="post" class="d-flex flex-column">
+        <form action="{{ route('scoresCreate') }}" method="post" class="d-flex flex-column">
             @csrf
             <label>
                 Spel
