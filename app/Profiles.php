@@ -8,8 +8,7 @@ class Profiles extends Model
 {
     protected $fillable = [
         'nickname',
-        'wins',
-        'losses',
+        'totalGames'
     ];
 
     public function user ()
@@ -19,7 +18,6 @@ class Profiles extends Model
 
     public function scores ()
     {
-
         return $this->hasMany(Scores::class);
     }
 }

@@ -16,6 +16,7 @@ class CreatePlayedGamesTable extends Migration
         Schema::create('played_games', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamp('playedAt')->default(now());
+            $table->unsignedInteger('games_id');
             $table->timestamps();
         });
     }

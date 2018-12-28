@@ -6,16 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Scores extends Model
 {
+    protected $fillable = [
+        'score',
+        'playedgames_id',
+    ];
 
-    public function playedgame ()
+    public function playedgames ()
     {
 
-        return $this->belongsTo(PlayedGames::class);
+        return $this->belongsTo(PlayedGames::class, 'playedgames_id');
     }
 
-    public function user ()
+    public function profiles ()
     {
 
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Profiles::class, 'profiles_id');
     }
 }

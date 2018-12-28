@@ -28,3 +28,10 @@ Route::delete('/games/{games}/destroy', 'GamesController@destroy');
 
 
 Route::get('/scores', 'ScoresController@index');
+Route::get('/scores/create', 'ScoresController@create');
+Route::post('/scores/create', 'ScoresController@store');
+
+Route::get('/temp_user', 'TempUser@index');
+Route::post('/temp_user/create', 'TempUser@create');
+
+Route::get('/scores/overview', 'ScoresOverview@index');

@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name' ) }}
@@ -43,6 +43,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/games">Games beheren</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/temp_user">Tijdelijke gebruikers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/scores/overview">Scores overzicht</a>
                         </li>
 
 

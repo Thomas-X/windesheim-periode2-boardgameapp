@@ -17,10 +17,15 @@ class User extends Authenticatable
 
         parent::boot();
         User::created(function (User $user) {
+
             Profiles::create([
                                  'nickname' => $user->name,
                              ]
             );
+        }
+        );
+        User::deleted(function (User $user) {
+            Profiles::destroy($user->id);
         }
         );
     }

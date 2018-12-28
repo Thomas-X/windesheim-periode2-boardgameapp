@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class PlayedGames extends Model
 {
-
-    public function game ()
+    protected $fillable = [
+        'playedAt',
+        'games_id'
+    ];
+    public function games ()
     {
 
         return $this->belongsTo(Games::class);
