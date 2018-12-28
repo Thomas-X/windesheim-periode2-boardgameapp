@@ -13,7 +13,6 @@
 
 
 Route::get('/', function () {
-    dd('1!!');
     return view('welcome');
 }
 )->name('home');
