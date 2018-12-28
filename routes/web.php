@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/~s1130146/P2_Laravel_Opdracht/', function () {
+Route::get('/', function () {
     dd('1!!');
     return view('welcome');
 }
