@@ -11,8 +11,6 @@
 |
 */
 
-dd(Route::current());
-
 
 Route::get('/~s1130146/P2_Laravel_Opdracht/', function () {
     dd('1!!');
