@@ -48,23 +48,24 @@ class ScoresController extends Controller
      */
     public function store (Request $request)
     {
-
+        // TODO add new validation rule instead of just required
+//        function ($attribute, $value, $fail) {
+//            $a = collect($value);
+//            $b = collect(
+//                collect($value)
+//                    ->filter(function ($value, $key) {
+//
+//                        return $value !== null;
+//                    }
+//                    )->toArray()
+//            )->unique();
+//            if ($a->count() !== $b->count()) {
+//                $fail($attribute . ' is duplicate');
+//            }
+//        }
         request()->validate([
                                 'game'    => 'required|string',
-                                'players' => function ($attribute, $value, $fail) {
-                                    $a = collect($value);
-                                    $b = collect(
-                                        collect($value)
-                                            ->filter(function ($value, $key) {
-
-                                                return $value !== null;
-                                            }
-                                            )->toArray()
-                                    )->unique();
-                                    if ($a->count() !== $b->count()) {
-                                        $fail($attribute . ' is duplicate');
-                                    }
-                                },
+                                'players' => 'required',
                                 'scores'  => 'required',
                             ]
         );
