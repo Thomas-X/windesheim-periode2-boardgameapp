@@ -11,7 +11,6 @@
 |
 */
 
-dd($_SERVER, $_ENV);
 
 Route::get('/~s1130146/P2_Laravel_Opdracht/', function () {
 
