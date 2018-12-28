@@ -25,7 +25,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/~s1130146/P2_Laravel_Opdracht/';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.

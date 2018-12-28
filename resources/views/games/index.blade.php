@@ -25,10 +25,10 @@
                         </div>
                         <div class="d-flex">
                             <button class="btn btn-dark m-1"
-                                    onclick="window.location.href = '/~s1130146/P2_Laravel_Opdracht/games/{{ $game->id }}/edit';">
+                                    onclick="window.location.href = '/games/{{ $game->id }}/edit';">
                                 aanpassen
                             </button>
-                            <form method="POST" action="/~s1130146/P2_Laravel_Opdracht/games/{{ $game->id  }}/destroy">
+                            <form method="POST" action="/games/{{ $game->id  }}/destroy">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger m-1" type="submit">

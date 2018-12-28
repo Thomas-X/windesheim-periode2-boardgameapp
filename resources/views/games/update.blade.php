@@ -18,7 +18,7 @@
                 </ul>
             </div>
         @endif
-        <form action="/~s1130146/P2_Laravel_Opdracht/games/{{ $game['id'] }}/update" method="post" class="d-flex flex-column">
+        <form action="/games/{{ $game['id'] }}/update" method="post" class="d-flex flex-column">
             @method('PATCH')
             @csrf
             <label>
