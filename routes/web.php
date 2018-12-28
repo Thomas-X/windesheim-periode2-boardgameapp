@@ -19,10 +19,12 @@ Route::get('/~s1130146/P2_Laravel_Opdracht/', function () {
 )->name('home');
 
 // Redirect dead routes to new home
-if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '') {
-    $uri = '/~s1130146/P2_Laravel_Opdracht';
-    header("Location: {$uri}");
-    die;
+if (array_key_exists('REQUEST_URI', $_SERVER)) {
+    if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '') {
+        $uri = '/~s1130146/P2_Laravel_Opdracht';
+        header("Location: {$uri}");
+        die;
+    }
 }
 
 Route::prefix('/~s1130146/P2_Laravel_Opdracht')->group(function () {
