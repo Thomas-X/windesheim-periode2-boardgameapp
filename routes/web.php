@@ -11,6 +11,8 @@
 |
 */
 
+dd(Route::current());
+
 
 Route::get('/~s1130146/P2_Laravel_Opdracht/', function () {
     dd('1!!');
@@ -18,23 +20,23 @@ Route::get('/~s1130146/P2_Laravel_Opdracht/', function () {
 }
 )->name('home');
 
-Route::get('~s1130146/P2_Laravel_Opdracht/', function () {
-    dd('2!!');
-    return view('welcome');
-}
-)->name('home');
+//Route::get('~s1130146/P2_Laravel_Opdracht/', function () {
+//    dd('2!!');
+//    return view('welcome');
+//}
+//)->name('home');
 
-Route::get('~s1130146/P2_Laravel_Opdracht', function () {
-    dd('3!!');
-    return view('welcome');
-}
-)->name('home');
+//Route::get('~s1130146/P2_Laravel_Opdracht', function () {
+//    dd('3!!');
+//    return view('welcome');
+//}
+//)->name('home');
 
-Route::get('/~s1130146/P2_Laravel_Opdracht', function () {
-    dd('4!!');
-    return view('welcome');
-}
-)->name('home');
+//Route::get('/~s1130146/P2_Laravel_Opdracht', function () {
+//    dd('4!!');
+//    return view('welcome');
+//}
+//)->name('home');
 
 // Redirect dead routes to new home (only works locally)
 if (array_key_exists('REQUEST_URI', $_SERVER)) {
