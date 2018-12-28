@@ -17,52 +17,32 @@ Route::get('/', function () {
 }
 )->name('home');
 
-//Route::get('~s1130146/P2_Laravel_Opdracht/', function () {
-//    dd('2!!');
-//    return view('welcome');
-//}
-//)->name('home');
-
-//Route::get('~s1130146/P2_Laravel_Opdracht', function () {
-//    dd('3!!');
-//    return view('welcome');
-//}
-//)->name('home');
-
-//Route::get('/~s1130146/P2_Laravel_Opdracht', function () {
-//    dd('4!!');
-//    return view('welcome');
-//}
-//)->name('home');
-
 // Redirect dead routes to new home (only works locally)
-if (array_key_exists('REQUEST_URI', $_SERVER)) {
-    if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '') {
-        $uri = '/~s1130146/P2_Laravel_Opdracht';
-        header("Location: {$uri}");
-        die;
-    }
-}
+//if (array_key_exists('REQUEST_URI', $_SERVER)) {
+//    if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '') {
+//        $uri = '';
+//        header("Location: {$uri}");
+//        die;
+//    }
+//}
 
-Route::prefix('/~s1130146/P2_Laravel_Opdracht')->group(function () {
     Auth::routes();
-});
 
-Route::get('/~s1130146/P2_Laravel_Opdracht/home', 'HomeController@index')->name('homeLoggedIn');
+Route::get('/home', 'HomeController@index')->name('homeLoggedIn');
 
-Route::get('/~s1130146/P2_Laravel_Opdracht/games', 'GamesController@index')->name('gamesIndex');
-Route::get('/~s1130146/P2_Laravel_Opdracht/games/create', 'GamesController@create')->name('gamesCreate');
-Route::post('/~s1130146/P2_Laravel_Opdracht/games/create', 'GamesController@store')->name('gamesStore');
-Route::get('/~s1130146/P2_Laravel_Opdracht/games/{games}/edit', 'GamesController@edit')->name('gamesEdit');
-Route::patch('/~s1130146/P2_Laravel_Opdracht/games/{games}/update', 'GamesController@update')->name('gamesUpdate');
-Route::delete('/~s1130146/P2_Laravel_Opdracht/games/{games}/destroy', 'GamesController@destroy')->name('gamesDestroy');
+Route::get('/games', 'GamesController@index')->name('gamesIndex');
+Route::get('/games/create', 'GamesController@create')->name('gamesCreate');
+Route::post('/games/create', 'GamesController@store')->name('gamesStore');
+Route::get('/games/{games}/edit', 'GamesController@edit')->name('gamesEdit');
+Route::patch('/games/{games}/update', 'GamesController@update')->name('gamesUpdate');
+Route::delete('/games/{games}/destroy', 'GamesController@destroy')->name('gamesDestroy');
 
 
-Route::get('/~s1130146/P2_Laravel_Opdracht/scores', 'ScoresController@index')->name('scoresIndex');
-Route::get('/~s1130146/P2_Laravel_Opdracht/scores/create', 'ScoresController@create')->name('scoresCreate');
-Route::post('/~s1130146/P2_Laravel_Opdracht/scores/create', 'ScoresController@store')->name('scoresStore');
+Route::get('/scores', 'ScoresController@index')->name('scoresIndex');
+Route::get('/scores/create', 'ScoresController@create')->name('scoresCreate');
+Route::post('/scores/create', 'ScoresController@store')->name('scoresStore');
 
-Route::get('/~s1130146/P2_Laravel_Opdracht/temp_user', 'TempUser@index')->name('tempUserIndex');
-Route::post('/~s1130146/P2_Laravel_Opdracht/temp_user/create', 'TempUser@create')->name('tempUserCreate');
+Route::get('/temp_user', 'TempUser@index')->name('tempUserIndex');
+Route::post('/temp_user/create', 'TempUser@create')->name('tempUserCreate');
 
-Route::get('/~s1130146/P2_Laravel_Opdracht/scores/overview', 'ScoresOverview@index')->name('scoresOverviewIndex');
+Route::get('/scores/overview', 'ScoresOverview@index')->name('scoresOverviewIndex');
