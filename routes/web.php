@@ -13,12 +13,30 @@
 
 
 Route::get('/~s1130146/P2_Laravel_Opdracht/', function () {
-
+    dd('1!!');
     return view('welcome');
 }
 )->name('home');
 
-// Redirect dead routes to new home
+Route::get('~s1130146/P2_Laravel_Opdracht/', function () {
+    dd('2!!');
+    return view('welcome');
+}
+)->name('home');
+
+Route::get('~s1130146/P2_Laravel_Opdracht', function () {
+    dd('3!!');
+    return view('welcome');
+}
+)->name('home');
+
+Route::get('/~s1130146/P2_Laravel_Opdracht', function () {
+    dd('4!!');
+    return view('welcome');
+}
+)->name('home');
+
+// Redirect dead routes to new home (only works locally)
 if (array_key_exists('REQUEST_URI', $_SERVER)) {
     if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '') {
         $uri = '/~s1130146/P2_Laravel_Opdracht';
