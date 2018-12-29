@@ -41,6 +41,7 @@ class ScoresController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * Also updates profiles
      *
      * @param  \Illuminate\Http\Request $request
      *

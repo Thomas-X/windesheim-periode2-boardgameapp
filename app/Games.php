@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/*
+ * The games model, a game can be played by having a "playedgames" model
+ * */
 class Games extends Model
 {
     public static $validations = [

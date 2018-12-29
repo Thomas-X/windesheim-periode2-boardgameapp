@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/*
+ * The playedgames model, it can have many scores associated with it and belongs to a game
+ * */
 class PlayedGames extends Model
 {
     protected $fillable = [

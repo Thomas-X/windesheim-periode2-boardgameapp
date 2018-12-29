@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/*
+ * The scores model, a score is connected to both a profile and playedgames, a polymorphic relationship should be used here to make these relations allow for multiple belongsTo's.
+ * */
 class Scores extends Model
 {
     protected $fillable = [

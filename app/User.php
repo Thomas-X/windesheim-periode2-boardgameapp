@@ -7,6 +7,10 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/*
+ * The user model, the user can have a profile connected with it with a hasMany relationship, could also be a one-to-one relationship.
+ * Hooks into both when a tuple of this model is created / deleted to create and delete the associated profile. If there's no profile connected the delete will not delete anything since there won't be a profile with that user ID.
+ * */
 class User extends Authenticatable
 {
 
